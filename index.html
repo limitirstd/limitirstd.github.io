@@ -1,865 +1,246 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <meta
-      name="keywords"
-      content="icpr, workshop, computer vision, computer graphics, visual learning, simulation environments, robotics, machine learning, object detection, single object tracking, Multiple-object tracking"
-    />
+<head>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <style>
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge</title>
 
-    <link rel="shortcut icon" href="2024/img/website_logo.png" />
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge" />
+  <meta property="og:url" content="https://limitirstd.github.io/" />
+  <meta property="og:site_name" content="PRCV2024" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:url" content="" />
 
-    <title>
-        ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge
-    </title>
-    <meta
-      name="description"
-      content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge ---"
-    />
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/lineabasic.css">
+  <link rel="stylesheet" type="text/css" href="./css/magnific-popup.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href=".//home.css">
 
-    <!--Open Graph Related Stuff-->
-    <meta
-      property="og:title"
-      content="Challenge on Moving Object Detection and Tracking in Satellite Videos"
-    />
-    <meta property="og:url" content="https://SatVideoDTchallenge.github.io/" />
-    <meta
-      property="og:description"
-      content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge ---"
-    />
-    <meta
-      property="og:site_name"
-      content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge"
-    />
-    <meta property="og:image" content="" />
-    <meta property="og:image:url" content="" />
-
-    <!--Twitter Card Stuff-->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge"
-    />
-    <meta
-      name="twitter:image"
-      content="https://github.com/SatVideoDTChallenge/2022/img/website_logo.png"
-    />
-    <meta name="twitter:url" content="satvideodtchallenge.github.io" />
-    <meta
-      name="twitter:description"
-      content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge ---"
-    />
-
-    <!-- CSS  -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./2024/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./2024/css/main.css?2"
-      media="screen,projection"
-    />
-
-    <!-- Font Awesome -->
-    <script src="/static/js/jquery.min.js?1"></script>
-    <script
-      src="https://kit.fontawesome.com/ff6e9b10da.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/static/js/moment.min.js?1"></script>
-    <script src="/static/js/main.js?2"></script>
-    <style> 
-      .divcss5{text-align:center} 
-      </style> 
-
-    <style type="text/css">
-        #table1{
-            font: bold 16px/1.4em "Trebuchet MS", sans-serif;
-        }
-        #table1 thead th{
-            padding: 15px;
-            border: 1px solid #d8e9b7;
-            border-bottom: 3px solid #d8e9b7;
-            text-shadow: 1px 1px 1px #d8e9b7;
-            color: #fff;
-            background-color: #d8e9b7;
-            border-radius: 5px 5px 0px 0px;
-        }
-        #table1 thead th:empty{
-            background-color: transparent;
-            border: none;
-        }
-        #table1 tbody th{
-            padding: 0px 10px;
-            border: 1px solid #d8e9b7;
-            border-right: 3px solid #d8e9b7;
-            text-shadow: 1px 1px 1px #d8e9b7;
-            color: #666;
-            background-color: #d8e9b7;
-            border-radius: 5px 0px 0px 5px;
-        }
-        #table1 tbody td{
-            padding: 10px;
-            border: 2px solid #E7EFE0;
-            text-align: center;
-            text-shadow: 1px 1px 1px #fff;
-            color: #666;
-            background-color: #DEF3CA;
-            border-radius: 2px;
-        }
-        #table1 tbody span.check::before{
-            content: url(images/check0.png);
-        }
-        #table1 tfoot td{
-            padding: 10px 0px;
-            font-size: 32px;
-            color: #d6e2b5;
-            text-align: center;
-            text-shadow: 1px 1px 1px #444;
-        }
-    </style>
-        
-  </head>
-
-
-  <body>
-    <style>
-        #year-header {
-          border: none;
-          display: block;
-          width: 100%;
-          background: #eaebea;
-        }
-  
-        #year-header ul {
-          display: block;
-          margin: 0;
-          margin-block-start: 0;
-          margin-block-end: 0;
-          padding-inline-start: 0;
-          text-align: center;
-        }
-  
-        #year-header ul li {
-          display: inline-block;
-          list-style: none;
-        }
-  
-        #year-header ul li a {
-          display: block;
-          text-decoration: none;
-          border: none;
-  
-          padding: 0 1.7em;
-          height: 3.2em;
-          line-height: 3.2em;
-          vertical-align: middle;
-  
-          font-family: Helvetica, Arial, sans-serif;
-          font-size: 1em;
-          font-weight: 400;
-          color: #444;
-        }
-  
-        @media (max-width: 1000px) {
-          #year-header ul li a {
-            font-size: 0.8em;
-          }
-        }
-  
-        #year-header ul li a:hover {
-          background: #dddedd;
-          color: #000;
-          transition: 0.5s;
-        }
-    </style>
-
-    <div class="navbar navbar-default sticky-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/"></a>
-                <button
-                class="navbar-toggle"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbar-main"
-                >
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#Description">Description</a></li>
-                <li><a href="#DatasetsEvaluationMetricsAndBaselineModel">Datasets, Evaluation Metrics, Baseline Model</a></li>
-                <li><a href="#Issues">Issues</a></li>
-                <li><a href="#Reference">Reference</a></li>
-                <li><a href="#Organizer">Committee</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+</head>
+<body>
+  <nav class="navbar">
     <div class="container">
-      <div class="page-content">
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-12">
-            <img class="img-fluid" src="2024/img/website_logo.png" />
-            <!--                <small style="float:right;margin-top:1mm;margin-right:5mm;">Image credit to <a-->
-            <!--                        href="https://pixabay.com/users/danielhannah-8058574" target="_blank">Daniel Hannah</a></small>-->
-            <!--<center>Date TBD, half-day</center>-->
-          </div>
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a target="_blank" href="https://limitirstd.github.io/">
+          </a>
         </div>
-        <p><br /></p>
-        
-        
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="intro"></a>
-            <h2>News:</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-              <p>
-              2024-4-15：Basic info update。             
-              </p>             
-          </div>
-        </div>
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="Introduction"></a>
-            <h2>Introduction</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              In recent years, with the development of deep learning technology, infrared small target detection has made rapid progress in various military and civilian fields, such as marine resource utilization, high-precision navigation, autonomous driving, and ecological environment monitoring. However, with the increasing demands for edge-side applications such as micro-satellites, micro-UAVs, autonomous vehicles and ships, existing infrared small target detection networks struggle to achieve efficient response in edge-side scenarios with limited annotated samples and computational resources. These limitations hinder their practical value in commercial and engineering applications.
-              <br \>
-              To address the aforementioned problems, we decide to organize a resource-limited infrared small target detection challenge. We aim to collaborate with peer institutions to further promote infrared small target detection in edge-side scenarios.
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="Description"></a>
-            <h2>Description of the Challenge</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              The objective of this challenge is to detect small target in infrared images under limited resources: less annotation (i.e., <b>Track 1:</b> Weakly Supervised Infrared Small Target Detection Under Single Point Supervision) and smaller model size (i.e., <b>Track 2:</b> Fully Supervised Lightweight Infrared Small Target Detection Under Pixel-level Supervision).
-              <br \>
-              During the model development phase, the training set will be released. Both original infrared images, the corresponding masks with single point annotation (track 1) and pixel-level annotation (i.e., track2) are available. The participants can train their models. During the test phase, the participants should submit their developed model and weights files. The organizers will evaluate the submitted models with a set of objective quantitative metrics.
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-        
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="DatasetsEvaluationMetricsAndBaselineModel"></a>
-            <h2>Datasets, Evaluation Metrics and Baseline Model</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              <div class="row">
-                  <div class="col-xs-12">
-                    <a class="anchor" id="Track1"></a>
-                    <h3>Datasets</h3>
-                  </div>
-              </div>            
-              <div class="row">
-                  <div class="col-xs-12">
-                    <p>
-                      Seven public datasets SIRST-V2[1], IRSTD-1K [17], IRDST [9], NUDT-SIRST [7] NUDT-SIRST-Sea [12], NUDT-MIRSDT [8], Anti-UAV [4] and our self-developed dataset are used in this challenge. The dataset contains images with various target shapes (e.g., point target, spotted target, extended target), wavelengths (e.g., near-infrared, shortwave infrared and thermal), image resolution (e.g., 256, 512, 1024, 3200, etc.), at varied imaging systems (e.g., land-based, aerial-based and space-based imaging systems) <b>Figure 1</b> shows some example images of the training sets. All datasets used in the challenges have been licensed by their authors, and the copyrights of all the datasets belong to their authors. Note that, the datasets provided are not allowed to be used beyond this challenge.
-                      <br \>
-                      <div class="divcss5">
-                        <img src="2024/img/Figure1.png" />
-                      </div>
-                      For track 1, 9300 images with groundtruth (GT) mask annotation are released for trainning and validation. 2000 images are used for test, and the groundtruth masks will not be released.
-                      <br \>
-                      For track 2, 6000 images with coarse point annotation\( ^ { 1 } \)  are released for training and validation. 500 images are used for test, and the groundtruth masks will not be released.
-                      <br \>
-                      <b>\( ^ { 1 } \)GT</b> point is located around the centroid of the GT mask under Gaussian distribution
-                    </p>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-xs-12">
-                    <a class="anchor" id="Track1"></a>
-                    <h3>Evaluation Metrics</h3>
-                  </div>
-              </div>     
-              <div class="row">
-                  <div class="col-xs-12">
-                    <p>
-                      Pixel-level metric (i.e., intersection over union \( I o U\)) and target-level metrics (i.e., probability of detection \( P _ { d }\) and false-alarm rate \( F _ { a }\)) will be used as metrics for performance evaluation in tracks 1, 2, and their implementations can be found in our public toolbox <b>BasicIRSTD\( ^ { 2 } \)</b>. Note that, the linear weighted summation of IoU and Pd is used for ranking, and the corresponding performance score Sp is defined as:
-                      $$ S _ { p } = \alpha \times I o U + ( 1 - \alpha ) \times P _ { d } , \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 1 )$$
-                      where \( \alpha \) represents the weight.
-                      <br \>
-                      For track 3, besides the performance score, we also introduce the number of parameters \( P \) and \( FLOPs \) \( F \) for performance evaluation. Note that, we rank entries based on the sum of these three values, with each value normalized by a baseline state-of-the-art model for the task. The corresponding efficiency score \( S _ { e } \) is defined as:
-                      $$ S _ { e } = 1 - \frac { P _ { s u b } / P _ { b a s e } + F _ { s u b } / F _ { b a s e } } { 2 } ,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 2 )$$
-                      where \( \left[ \cdot \right] _{s u b}\) and \( \left[ \cdot \right] _{b a s e}\) represent the corresponding values of submission and baseline model. The final score \( S _ { p e }\) is the multiple weighted summations of the performance score and the efficiency score, and can be defined as:
-                      $$ S _ { p e } = \sum _ { n = 1 } ^ { N } \left[ \frac { n } { N } \times S _ { p } + ( 1 - \frac { n } { N } ) \times S _ { c } \right] / N . \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   ( 3 )$$
-                      <b>\( ^ { 2 } \)BasicIRSTD</b> is a PyTorch-based open-source and easy-to-use toolbox for infrared small target detection (IRSTD). This toolbox introduces a simple pipeline to train/test your methods, and builds a benchmark to comprehensively evaluate the performance of existing methods.                    
-                    </p>
-                  </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12">
-                  <a class="anchor" id="Track1"></a>
-                  <h3>Baseline Model</h3>
-                </div>
-              </div>            
-              <div class="row">
-                <div class="col-xs-12">
-                  <p>
-                    Wait for release.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12">
-                  <a class="anchor" id="Track1"></a>
-                  <h3>Registration</h3>
-                </div>
-              </div>            
-              <div class="row">
-                <div class="col-xs-12">
-                  <p>
-                    Participants can be registered by email. Each group can-not have more than five group members (i.e., 1 to 5 group members is OK), and each participant can only join one group. Each group can only submit one algorithm for final ranking.
-                    <br \>
-                    Participants will fill out the registration form and email it to LimitIRSTD@outlook.com.
-                    <br \>
-                    Email title: ”ICPR2024 LimitIRSTD (Institution name) (Team name)”
-                    <br \>
-                    Registration Form: 
-
-                    <table id="recruit">
-                      <caption  id="caption2"> Registration Form </caption>
-                      <tr>
-                        <td>Team Name</td>
-                        <td colspan="3"> </td>
-                      </tr>
-                      <tr>
-                        <td>Member name</td>
-                        <td>Role</td>
-                        <td>Institution</td>
-                        <td>Emails</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Leader</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Member</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Member</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Member</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Member</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12">
-                  <a class="anchor" id="Track1"></a>
-                  <h3>Submission</h3>
-                </div>
-              </div>            
-              <div class="row">
-                <div class="col-xs-12">
-                  <p>
-                    Wait for release.
-                  </p>
-                </div>
-              </div>
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="MainTime"></a>
-            <h2>Important Dates</h2>
-          </div>
-        </div>
-        <table id="recruit">
-          <tr>
-            <th>Time</th>
-            <th>Target</th>
-          </tr>
-          <tr>
-            <td>May 1, 2024</td>
-            <td>Release of training data, validation data.</td>
-          </tr>
-          <tr>
-            <td>June 19, 2024</td>
-            <td>Registration deadline.</td>
-          </tr>
-          <tr>
-            <td>June 20, 2024</td>
-            <td>Testing server online.</td>
-          </tr>
-          <tr>
-            <td>July 11, 2024</td>
-            <td>Test result submission deadline.</td>
-          </tr>
-          <tr>
-            <td>July 11, 2024</td>
-            <td>Fact sheet / code / model submission
-              deadline</td>
-          </tr>
-          <tr>
-            <td>July 21, 2024</td>
-            <td>Competition Report submission deadline.</td>
-          </tr>
-          <tr>
-            <td>August 1, 2024</td>
-            <td>Test preliminary score release to the participants.</td>
-          </tr>
-          <tr>
-            <td>August 23, 2024</td>
-            <td>Challenge paper submission.</td>
-          </tr>
-          <tr>
-            <td>September 2, 2024</td>
-            <td>Camera-ready papers due.</td>
-          </tr>
-          <tr>
-            <td>December 1, 2024</td>
-            <td>Workshop day.</td>
-          </tr>
-        </table>
-        <p><br /></p>
-
-        
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="Conditions"></a>
-            <h2>Terms and Conditions</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              See <a heef="https://wideirstd.github.io/">https://wideirstd.github.io/</a>  for detailed terms and conditions.
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="Issues"></a>
-            <h2>Issues and Questions</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              For any question regarding this challenge, please send an email to LimitIRSTD@outlook.com. You can also join our WeChat group by scanning the code below:
-              <div class="divcss5">
-                <img src="2024/img/2DCode.png" />
-              </div>
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="anchor" id="Reference"></a>
-            <h2>Reference</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              [1] Yimian Dai, Xiang Li, Fei Zhou, Yulei Qian, Yaohong Chen, , and Jian Yang. One-stage cascade refinement networks for infrared small target detection. IEEE Transactions on Geoscience and Remote Sensing (TGRS), pages 1–17, 2023. 1
-              <br />
-              [2] Yimian Dai, Yiquan Wu, Fei Zhou, and Kobus Barnard. Asymmetric contextual modulation for infrared small target detection. In IEEE Winter Conference on Applications of Computer Vision (WACV), 2021.              
-              <br />
-              [3] Yimian Dai, Yiquan Wu, Fei Zhou, and Kobus Barnard. Attentional local contrast networks for infrared small target detection. IEEE Transactions on Geoscience and Remote Sensing (TGRS), pages 1–12, 2021.
-              <br />
-              [4] Bo Huang, Jianan Li, Junjie Chen, Gang Wang, Jian Zhao, and Tingfa Xu. Anti-uav410: A thermal infrared benchmark and customized scheme for tracking drones in the wild. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), pages 1–14, 2023.
-              <br />
-              [5] Renke Kou, Chunping Wang, Ying Yu, Zhenming Peng, Mingbo Yang, Fuyu Huang, and Qiang Fu. Lw-irstnet: Lightweight infrared small target segmentation network and application deployment. IEEE Transactions on Geoscience and Remote Sensing, 61:1–13, 2023.
-              <br />
-              [6] Boyang Li, Yingqian Wang, Longguang Wang, Fei Zhang, Ting Liu, Zaiping Lin, Wei An, and Yulan Guo. Monte carlo linear clustering with single-point supervision is enough for infrared small target detection. In IEEE International Conference on Computer Vision (ICCV), volume 1, pages 4–56.
-              <br />
-              [7] Boyang Li, Chao Xiao, Longguang Wang, Yingqian Wang, Zaiping Lin, Miao Li, Wei An, and Yulan Guo. Dense nested attention network for infrared small target detection. IEEE Transactions on Image Processing (TIP), 2022. 
-              <br />
-              [8] Ruojing Li, Wei An, Chao Xiao, Boyang Li, Yingqian Wang, Miao Li, and Yulan Guo. Direction-coded temporal u-shape module for multiframe infrared small target detection. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), pages 1–14, 2023. 
-              <br />
-              [9] Heng Sun, Junxiang Bai, Fan Yang, and Xiangzhi Bai. Receptive-field and direction induced attention network for infrared dim small target detection with a large-scale dataset irdst. IEEE Transactions on Geoscience and Remote Sensing (TGRS), 61:1–13, 2023.
-              <br />
-              [10] Huan Wang, Luping Zhou, and Lei Wang. Miss detection vs. false alarm: Adversarial learning for small object segmentation in infrared images. In IEEE International Conference on Computer Vision (ICCV), pages 8509–8518, 2019.              
-              <br />
-              [11] Shuanglin Wu, Chao Xiao, Longguang Wang, Yingqian Wang, Jungang Yang, and Wei An. Repisdnet: Learning efficient infrared small-target detection network via structural re-parameterization. IEE Transactions on Geoscience and Remote Sensing(TGRS), 61:1–12, 2023
-              <br />
-              [12] Tianhao Wu, Boyang Li, Yihang Luo, Yingqian Wang, Chao Xiao, Ting Liu, Jungang Yang, Wei An, and Yulan Guo. Mtu-net: multilevel transunet for spacebased infrared tiny ship detection. IEEE Transactions on Geoscience and Remote Sensing (TGRS), 61:1–15, 2023.
-              <br />
-              [13] Xin Wu, Danfeng Hong, and Jocelyn Chanussot. Uiunet: u-net in u-net for infrared small object detection. IEEE Transactions on Image Processing (TIP), 32:364–376, 2022.
-              <br />
-              [14] Xinyi Ying, Li Liu, Yingqian Wang, Ruojing Li, Nuo Chen, Zaiping Lin, Weidong Sheng, and Shilin Zhou. Mapping degeneration meets label evolution: Learning infrared small target detection with single point supervision. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 15528–15538, 2023.
-              <br />
-              [15] Mingjin Zhang, Haichen Bai, Jing Zhang, Rui Zhang, Chaoyue Wang, Jie Guo, and Xinbo Gao. Rkformer: Runge-kutta transformer with random-connection attention for infrared small target detection. In ACM International Conference on Multimedia (ACM MM), pages 1730–1738, 2022
-              <br />
-              [16] Mingjin Zhang, Ke Yue, Jing Zhang, Yunsong Li, and Xinbo Gao. Exploring feature compensation and cross-level correlation for infrared small target detection. In ACM International Conference on Multimedia (ACM MM), pages 1857–1865, 2022.
-              <br />
-              [17] Mingjin Zhang, Rui Zhang, Yuxiang Yang, Haichen Bai, Jing Zhang, and Jie Guo. Isnet: Shape matters for infrared small target detection. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 877–886, 2022.
-              <br />
-            </p>
-          </div>
-        </div>
-        <p><br /></p>
-
-
-        <div class="row">
-          <div class="col-xs-11">
-            <a class="anchor" id="Organizer"></a>
-            <h2>WideIRSTD committee</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              <div class="row">
-                  <div class="col-xs-12">
-                    <a class="anchor" id="Track1"></a>
-                    <h3>Advisory committee</h3>
-                  </div>
-              </div>            
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-1"></div>
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/李淼.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Miao Li
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a href="https://zhaoj9014.github.io">
-              <img class="people-pic" src="2024/img/organizers/赵健.jpg" />
-            </a>
-            <div class="people-name">
-              <a href="https://zhaoj9014.github.io">
-                Jian Zhao
-              </a>
-              <h6>
-                China Telecom Institute of AI (TeleAI), Beijing China
-                <br />
-                School of Artificial Intelligence, Optics and Electronics (iOPEN) ｜ Northwestern Polytechnical University (NWPU), Xi'an China
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a href="https://teacher.bupt.edu.cn/jinlei1/zh_CN/index.htm">
-              <img class="people-pic" src="2024/img/organizers/金磊.png" />
-            </a>
-            <div class="people-name">
-              <a href="https://teacher.bupt.edu.cn/jinlei1/zh_CN/index.htm">
-                Lei Jin
-              </a>
-              <h6>
-                Beijing University of Posts and Telecommunications
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/肖超.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Chao Xiao
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-        </div>
-        <p><br /></p>
-        <div class="row">
-          <div class="col-xs-1"></div>
-          
-          <div class="col-xs-2">
-            <a href="https://www.lunlunapp.com/scholarDetails/b75ffbd24c285f6d3eb125127fa898ad">
-              <img class="people-pic" src="2024/img/organizers/凌强.png" />
-            </a>
-            <div class="people-name">
-              <a href="https://www.lunlunapp.com/scholarDetails/b75ffbd24c285f6d3eb125127fa898ad">
-                Qiang Ling
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/林再平.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Zaiping Lin
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-        </div>
-        <p><br /></p>
-
-        
-        <div class="row">
-          <div class="col-xs-12">
-            <p>
-              <div class="row">
-                  <div class="col-xs-12">
-                    <a class="anchor" id="Track1"></a>
-                    <h3>organizing committee</h3>
-                  </div>
-              </div>            
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-1"></div>
-          <div class="col-xs-2">
-            <a href="https://xinyiying.github.io/">
-              <img class="people-pic" src="2024/img/organizers/应昕怡.jpg" />
-            </a>
-            <div class="people-name">
-              <a href="https://xinyiying.github.io/">
-                Xinyi Ying
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a href="https://yeren123455.github.io/boyangli.github.io/">
-              <img class="people-pic" src="2024/img/organizers/李博扬.jpg" />
-            </a>
-            <div class="people-name">
-              <a href="https://yeren123455.github.io/boyangli.github.io/">
-                Boyang Li
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a href="https://scholar.google.hk/citations?user=BPD9GbEAAAAJ&hl=zh-CN&oi=sra">
-              <img class="people-pic" src="2024/img/organizers/李若敬.jpg" />
-            </a>
-            <div class="people-name">
-              <a href="https://scholar.google.hk/citations?user=BPD9GbEAAAAJ&hl=zh-CN&oi=sra">
-                Ruojing Li
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/张鑫.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Xin Zhang
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-        <div class="row">
-          <div class="col-xs-1"></div>
-
-          <p><br /></p>
-          <div class="col-xs-2">
-            <a href="https://github.com/yongxianLiu">
-              <img class="people-pic" src="2024/img/organizers/石杨思.jpg" />
-            </a>
-            <div class="people-name">
-              <a href="">
-                Siyang Shi
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-          
-          <div class="col-xs-2">
-            <a href="https://github.com/yongxianLiu">
-              <img class="people-pic" src="2024/img/organizers/刘永贤.png" />
-            </a>
-            <div class="people-name">
-              <a href="https://github.com/yongxianLiu">
-                Yongxian Liu
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/胡铭原.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Mingyuan Liu
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/吴晨阳.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Chenyang Wu
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-        
-        </div>
-        <p><br /></p>
-        <div class="row">
-          <div class="col-xs-1"></div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/张宇凯.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Yukai Zhang
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/韦晖.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Hui Wei
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
-          <div class="col-xs-2">
-            <a >
-              <img class="people-pic" src="2024/img/organizers/汤冬骊.jpg" />
-            </a>
-            <div class="people-name">
-              <a >
-                Dongli Tang
-              </a>
-              <h6>
-                National University of Defense Technology
-              </h6>
-            </div>
-          </div>
-
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="padding-top:10px;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Description">Description</a></li>
+            <li><a href="/Registration">Registration</a></li>
+            <li><a href="/Organizers">Organizers</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </body>
+  </nav>
+
+  <div class="container">
+    <div class="page-content">
+
+      <p><br /></p>
+      <style type="text/css">
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        div {
+          position: relative;
+        }
+
+        div w {
+          position: absolute;
+          right: 40px;
+          top: 40px;
+          color: white;
+        }
+      </style>
+      <div>
+        <img src="img/website_logo.png" style="width:100%" /> 
+        <font size="6"><strong>
+          </strong></font>
+        <font size="6">
+        </font>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>News</b></h2> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" style="text-indent: 2em;">
+          2024-4-18：Basic information release.
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Schedule</b></h2>
+        </div>
+      </div>
+      <table class="table table-important" align="center">
+        <tr>
+          <th style="text-align:center">Time</th>
+          <th style="text-align:center">Target</th>
+        </tr>
+        <tr>
+          <td>May 1, 2024</td>
+          <td>Release of training data, validation data.</td>
+        </tr>
+        <tr>
+          <td>June 19, 2024</td>
+          <td>Registration deadline.</td>
+        </tr>
+        <tr>
+          <td>June 20, 2024</td>
+          <td>Testing server online.</td>
+        </tr>
+        <tr>
+          <td>July 11, 2024</td>
+          <td>Test result submission deadline.</td>
+        </tr>
+        <tr>
+          <td>July 11, 2024</td>
+          <td>Fact sheet / code / model submission
+            deadline</td>
+        </tr>
+        <tr>
+          <td>July 21, 2024</td>
+          <td>Competition Report submission deadline.</td>
+        </tr>
+        <tr>
+          <td>August 1, 2024</td>
+          <td>Test preliminary score release to the participants.</td>
+        </tr>
+        <tr>
+          <td>August 23, 2024</td>
+          <td>Challenge paper submission.</td>
+        </tr>
+        <tr>
+          <td>September 2, 2024</td>
+          <td>Camera-ready papers due.</td>
+        </tr>
+        <tr>
+          <td>December 1, 2024</td>
+          <td>Workshop day.</td>
+        </tr>
+      </table>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Introduction</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              In recent years, with the development of deep learning technology, infrared small target detection has made rapid progress in various military and civilian fields, such as marine resource utilization, high-precision navigation, autonomous driving, and ecological environment monitoring. However, with the increasing demands for edge-side applications such as micro-satellites, micro-UAVs, autonomous vehicles and ships, existing infrared small target detection networks struggle to achieve efficient response in edge-side scenarios with limited annotated samples and computational resources. These limitations hinder their practical value in commercial and engineering applications.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              To address the aforementioned problems, we decide to organize a resource-limited infrared small target detection challenge. We aim to collaborate with peer institutions to further promote infrared small target detection in edge-side scenarios.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Description of ICPR 2024 LimitIRSTD	</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              <b>ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge</b> (LimitIRSTD) aims to facilitate the development of infrared small object detection algorithms under limited resources (e.g., less annotation, and low computational cost). This challenge is expected to include the following two competition tracks.
+            </div>
+          </div>
+          <b>Track 1: Weakly Supervised Infrared Small Target Detection Under Single Point Supervision.</b> 
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              The goal of this task is to achieve weakly supervised infrared small target detection under single coarse point supervision (i.e., GT point is located around the centroid of the GT mask under Gaussian distribution). We will provide the training set with 6000 images and corresponding single point annotations. Test set with 500 frames is unavailable to the participants, and the participants will submit the models for performance evaluation.
+            </div>
+          </div>
+          <b>Track 2: Lightweight Infrared Small Target Detection Under Pixel-level Supervision.</b>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              The goal of this task is to achieve lightweight and efficient infrared small target detection under pixel level supervision (i.e., the model achieves better detection performance with fewer parameters, less computation and less memory usage). We will provide the training set with 9000 images and corresponding ground truth mask annotations. Test set with 2000 images is unavailable to the participants, and the participants will submit the models for performance evaluation. 
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Contact</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              <b>Emails:</b> SkatingVerse.163.com 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              <b>Toolbox:</b> <a href="https://github.com/XinyiYing/BasicIRSTD">https://github.com/XinyiYing/BasicIRSTD</a> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              <b>Wechat:</b>
+              <div class="divcss5">
+                <img src="img/2DCode.png" />
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </div>
+</body>
+
 </html>

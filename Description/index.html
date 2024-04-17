@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <style>
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge</title>
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge" />
+  <meta property="og:url" content="https://limitirstd.github.io/" />
+  <meta property="og:site_name" content="PRCV2024" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:url" content="" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/css/font-awesome.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/lineabasic.css">
+  <link rel="stylesheet" type="text/css" href="../css/magnific-popup.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a target="_blank" href="https://limitirstd.github.io/">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="padding-top:10px;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Description">Description</a></li>
+            <li><a href="/Registration">Registration</a></li>
+            <li><a href="/Organizers">Organizers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-content">
+
+      <p><br /></p>
+      <style type="text/css">
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        div {
+          position: relative;
+        }
+
+        div w {
+          position: absolute;
+          right: 40px;
+          top: 40px;
+          color: white;
+        }
+      </style>
+      <div>
+        <img src="/img/website_logo.png" style="width:100%" /> 
+        <font size="6"><strong>
+          </strong></font>
+        <font size="6">
+        </font>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Datasets</b></h2> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              Seven public datasets SIRST-V2, IRSTD-1K, IRDST, NUDT-SIRST NUDT-SIRST-Sea, NUDT-MIRSDT, Anti-UAV and a dataset developed by the team of National University of Defense Technology (NUDT) are used in this challenge. The dataset contains images with various target shapes (e.g., point target, spotted target, extended target), wavelengths (e.g., near-infrared, shortwave infrared and thermal), image resolution (e.g., 256, 512, 1024, 3200, etc.), at varied imaging systems (e.g., land-based, aerial-based and space-based imaging systems). Figure 1 shows some example images of the training sets. 
+            </div>
+          </div>
+          <div class="divcss5">
+            <img src="/img/Figure1.png" />
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              All datasets used in the challenges have been licensed by their authors, and the copyrights of all the datasets belong to their authors. Note that, the datasets provided are not allowed to be used beyond this challenge.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              For track 1, 9300 images with groundtruth (GT) mask annotation are released for trainning and validation. 2000 images are used for test, and will not be released.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              For track 2, 6000 images with coarse point annotation (i.e., GT point is located around the centroid of the GT mask under Gaussian distribution) are released for training and validation. 500 images are used for test, and will not be released.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3><b>Evaluation Metrics</b></h3>
+        </div>
+      </div>     
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              Pixel-level metric (i.e., intersection over union \( I o U\)) and target-level metrics (i.e., probability of detection \( P _ { d }\) and false-alarm rate \( F _ { a }\)) will be used as metrics for performance evaluation in tracks 1, 2, and their implementations can be found in our public toolbox <b>BasicIRSTD\( ^ { 2 } \)</b>. Note that, the linear weighted summation of IoU and Pd is used for ranking, and the corresponding performance score Sp is defined as:
+              $$ S _ { p } = \alpha \times I o U + ( 1 - \alpha ) \times P _ { d } , \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 1 )$$
+              where \( \alpha \) represents the weight.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              For track 3, besides the performance score, we also introduce the number of parameters \( P \) and \( FLOPs \) \( F \) for performance evaluation. Note that, we rank entries based on the sum of these three values, with each value normalized by a baseline state-of-the-art model for the task. The corresponding efficiency score \( S _ { e } \) is defined as:
+              $$ S _ { e } = 1 - \frac { P _ { s u b } / P _ { b a s e } + F _ { s u b } / F _ { b a s e } } { 2 } ,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 2 )$$
+              where \( \left[ \cdot \right] _{s u b}\) and \( \left[ \cdot \right] _{b a s e}\) represent the corresponding values of submission and baseline model. The final score \( S _ { p e }\) is the multiple weighted summations of the performance score and the efficiency score, and can be defined as:
+              $$ S _ { p e } = \sum _ { n = 1 } ^ { N } \left[ \frac { n } { N } \times S _ { p } + ( 1 - \frac { n } { N } ) \times S _ { c } \right] / N . \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   ( 3 )$$
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              <b>\( ^ { 2 } \)BasicIRSTD</b> is a PyTorch-based open-source and easy-to-use toolbox for infrared small target detection (IRSTD). This toolbox introduces a simple pipeline to train/test your methods, and builds a benchmark to comprehensively evaluate the performance of existing methods.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="anchor" id="Track1"></a>
+          <h3><b>Baseline Model</b></h3>
+        </div>
+      </div>            
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" style="text-indent: 2em;"> 
+              Wait for release.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </div>
+</body>
+
+</html>
