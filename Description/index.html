@@ -156,14 +156,14 @@
         <div class="col-xs-12">
           <div class="row">
             <div class="col-xs-12" > 
-              Pixel-level metric (i.e., intersection over union \( I o U\)) and target-level metrics (i.e., probability of detection \( P _ { d }\) and false-alarm rate \( F _ { a }\)) will be used as metrics for performance evaluation in tracks 1, 2, and their implementations can be found in our public <a href="https://github.com/XinyiYing/BasicIRSTD"><b>toolbox</b></a>. Note that, the linear weighted summation of IoU and Pd is used for ranking, and the corresponding performance score Sp is defined as:
+              Pixel-level metric (i.e., intersection over union \( I o U\)) and target-level metrics (i.e., probability of detection \( P _ { d }\) and false-alarm rate \( F _ { a }\)) will be used as metrics for performance evaluation in tracks 1, and their implementations can be found in our public <a href="https://github.com/XinyiYing/BasicIRSTD"><b>toolbox</b></a>. Note that, the linear weighted summation of IoU and Pd is used for ranking, and the corresponding performance score Sp is defined as:
               $$ S _ { p } = \alpha \times I o U + ( 1 - \alpha ) \times P _ { d } , \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 1 )$$
               where \( \alpha \) represents the weight.
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12" > 
-              For track 3, besides the performance score, we also introduce the number of parameters \( P \) and FLOPs \( F \) for performance evaluation. Note that, we rank entries based on the sum of these three values, with each value normalized by a baseline state-of-the-art model for the task. The corresponding efficiency score \( S _ { e } \) is defined as:
+              For track 2, besides the performance score, we also introduce the number of parameters \( P \) and FLOPs \( F \) for performance evaluation. Note that, we rank entries based on the sum of these three values, with each value normalized by a baseline state-of-the-art model for the task. The corresponding efficiency score \( S _ { e } \) is defined as:
               $$ S _ { e } = 1 - \frac { P _ { s u b } / P _ { b a s e } + F _ { s u b } / F _ { b a s e } } { 2 } ,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 2 )$$
               where \( \left[ \cdot \right] _{s u b}\) and \( \left[ \cdot \right] _{b a s e}\) represent the corresponding values of submission and baseline model. The final score \( S _ { p e }\) is the multiple weighted summations of the performance score and the efficiency score, and can be defined as:
               $$ S _ { p e } = \sum _ { n = 1 } ^ { N } \left[ \frac { n } { N } \times S _ { p } + ( 1 - \frac { n } { N } ) \times S _ { c } \right] / N . \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   ( 3 )$$
