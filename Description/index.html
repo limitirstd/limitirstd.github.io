@@ -166,13 +166,13 @@
               For track 2, besides the performance score, we also introduce the number of parameters \( P \) and FLOPs \( F \) for performance evaluation. Note that, we rank entries based on the sum of these three values, with each value normalized by a baseline state-of-the-art model for the task. The corresponding efficiency score \( S _ { e } \) is defined as:
               $$ S _ { e } = 1 - \frac { P _ { s u b } / P _ { b a s e } + F _ { s u b } / F _ { b a s e } } { 2 } ,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 2 )$$
               where \( \left[ \cdot \right] _{s u b}\) and \( \left[ \cdot \right] _{b a s e}\) represent the corresponding values of submission and baseline model. The final score \( S _ { p e }\) is the multiple weighted summations of the performance score and the efficiency score, and can be defined as:
-              $$ S _ { p e } = \frac { ( S _ { p } + S _ { e } ) } { 2 }  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   ( 3 )$$
+              $$ S _ { p e } = γ \times S _ { p } + ( 1 - γ ) \times S _ { e } , \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 3 )$$
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12" > 
               <b>Note:</b>The use of additional data or pre-trained models is not allowed in the competition.
-              <b>\(\alpha\) = 0.5</b> 
+              <b>\(\alpha\) = 0.5， \(γ\) = 0.5</b> 
             </div>
           </div>
         </div>
@@ -279,12 +279,12 @@
                 </tr>
                 <tr>
                   <td style="text-align:center">UNet </td>
-                  <td style="text-align:center">0.62 </td>
-                  <td style="text-align:center">0.59 </td>
+                  <td style="text-align:center">62 </td>
+                  <td style="text-align:center">59 </td>
                   <td style="text-align:center">1.5e-05 </td>
                   <td style="text-align:center">0.9M </td>
                   <td style="text-align:center">5.08G </td>
-                  <td style="text-align:center">0.60 </td>
+                  <td style="text-align:center">60 </td>
                 </tr>
               </table>
               <p>
