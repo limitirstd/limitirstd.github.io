@@ -158,7 +158,7 @@
             <div class="col-xs-12" > 
               Pixel-level metric (i.e., intersection over union \( I o U\)) and target-level metrics (i.e., probability of detection \( P _ { d }\) and false-alarm rate \( F _ { a }\)) will be used as metrics for performance evaluation in track 1, and their implementations can be found in our public <a href="https://github.com/XinyiYing/BasicIRSTD"><b>toolbox</b></a>. Note that, the linear weighted summation of IoU and Pd is used for ranking, and the corresponding performance score Sp is defined as:
               $$ S _ { p } = \alpha \times I o U + ( 1 - \alpha ) \times P _ { d } , \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  ( 1 )$$
-              where \( \alpha \) represents the weight. The false alarm probability \( F _ { a }\) must be lower than 5e-5 to be considered a valid score, otherwise the score will be invalid.
+              where \( \alpha \) represents the weight. The false alarm probability \( F _ { a }\) must be lower than 1e-4 to be considered a valid score, otherwise the score will be invalid.
             </div>
           </div>
           <div class="row">
@@ -201,7 +201,7 @@
                   <span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
                 </span>
                 <![endif]>
-                <b>Baseline model training and test results:</b>
+                <b>Baseline model results for test A (60% of test results):</b>
               </p>
               <table class="table table-important" align="center">
                 <tr>
@@ -212,20 +212,53 @@
                   <th style="text-align:center">Score</th>
                 </tr>
                 <tr>
-                  <td style="text-align:center">DNANet_full (full supervision) </td>
-                  <td style="text-align:center">24.370 </td>
-                  <td style="text-align:center">46.144 </td>
-                  <td style="text-align:center">1.3602e-05 </td>
-                  <td style="text-align:center">35.257 </td>
+                  <td style="text-align:center">DNANet_full (full supervision)    </td>
+                  <td style="text-align:center">27.538 </td>
+                  <td style="text-align:center">60.568 </td>
+                  <td style="text-align:center">8.590e-6 </td>
+                  <td style="text-align:center">44.053 </td>
                 </tr>
                 <tr>
                   <td style="text-align:center">DNANet_LESPS_coarse (weak supervision) </td>
-                  <td style="text-align:center">18.181 </td>
-                  <td style="text-align:center">32.394 </td>
-                  <td style="text-align:center">4.7667e-05 </td>
-                  <td style="text-align:center">25.2875 </td>
+                  <td style="text-align:center">16.634 </td>
+                  <td style="text-align:center">52.050 </td>
+                  <td style="text-align:center">3.521e-5 </td>
+                  <td style="text-align:center">34.342 </td>
                 </tr>
               </table>
+
+              <p>
+                <![if !supportLists]>
+                <span lang=EN-US style='font-size:12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings'>
+                  <span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+                </span>
+                <![endif]>
+                <b>Baseline model results for test B (100% of test results):</b>
+              </p>
+              <table class="table table-important" align="center">
+                <tr>
+                  <th style="text-align:center">Model</th>
+                  <th style="text-align:center">IoU</th>
+                  <th style="text-align:center">Pd</th>
+                  <th style="text-align:center">Fa</th>
+                  <th style="text-align:center">Score</th>
+                </tr>
+                <tr>
+                  <td style="text-align:center">DNANet_full (full supervision)    </td>
+                  <td style="text-align:center">28.957 </td>
+                  <td style="text-align:center">59.675 </td>
+                  <td style="text-align:center">7.943e-6 </td>
+                  <td style="text-align:center">44.316  </td>
+                </tr>
+                <tr>
+                  <td style="text-align:center">DNANet_LESPS_coarse (weak supervision) </td>
+                  <td style="text-align:center">18.015 </td>
+                  <td style="text-align:center">50.452 </td>
+                  <td style="text-align:center">3.291e-5 </td>
+                  <td style="text-align:center">34.234 </td>
+                </tr>
+              </table>
+
               <p>
                 <![if !supportLists]>
                 <span lang=EN-US style='font-size:12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings'>
