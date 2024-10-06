@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <style>
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge</title>
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge" />
+  <meta property="og:url" content="https://limitirstd.github.io/" />
+  <meta property="og:site_name" content="PRCV2024" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:url" content="" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/lineabasic.css">
+  <link rel="stylesheet" type="text/css" href="./css/magnific-popup.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href=".//home.css">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a target="_blank" href="https://limitirstd.github.io/">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="padding-top:10px;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Description">Description</a></li>
+            <li><a href="/Registration">Registration</a></li>
+            <li><a href="/Organizers">Organizers</a></li>
+            <li><a href="/Conditions">Terms and conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-content">
+
+      <p><br /></p>
+      <style type="text/css">
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        div {
+          position: relative;
+        }
+
+        div w {
+          position: absolute;
+          right: 40px;
+          top: 40px;
+          color: white;
+        }
+      </style>
+      <div>
+        <img src="img/website_logo.png" style="width:100%" /> 
+        <font size="6"><strong>
+          </strong></font>
+        <font size="6">
+        </font>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>News</b></h2> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p>
+            2024-04-18：Basic information release.
+          </p>
+          <p>
+            2024-04-26：Award for Each Track information update.
+          </p>
+          <p>
+            2024-05-02：Dataset for Track 1 is released in
+            <a href="https://pan.baidu.com/s/1ptFw2rpNuFIv8ytJPJubMg?pwd=sq79">Baidu Drive</a> 
+            and
+            <a href="https://1drv.ms/u/c/90bf30fdc8dd9ee7/EWBfeROOiudLo_QhU4Cc0FkBQKtEL2OmQUZWcuOgtAvdSw?e=KhPX71">
+              OneDrive</a>.
+          </p>
+          <p>
+            2024-05-02：Dataset for Track 2 is released in
+            <a href="https://pan.baidu.com/s/1hApbjaanFzw_HW1FlPXngQ?pwd=467w">Baidu Drive</a> 
+            and
+            <a href="https://1drv.ms/u/c/90bf30fdc8dd9ee7/EZSCbgg7VeNNo-Gm1ugpmFoBu8v3ysM9te-JHdyZy1Qbtg?e=e1N82p">
+              OneDrive</a>.
+          </p>
+          <p>
+            2024-05-27：Baseline Model update.
+          </p>
+          <p>
+            2024-06-22：The test server online for
+            <a href="https://bohrium.dp.tech/competitions/8821868197">Track 1</a>
+            and 
+            <a href="https://bohrium.dp.tech/competitions/9012970343">Track 2</a>            
+            release.
+          </p>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Schedule</b></h2>
+        </div>
+      </div>
+      <table class="table table-important" align="center">
+        <tr>
+          <th style="text-align:center">Time</th>
+          <th style="text-align:center">Target</th>
+        </tr>
+        <tr>
+          <td>May 1, 2024</td>
+          <td>Release of training data, validation data</td>
+        </tr>
+        <tr>
+          <td>June 21, 2024</td>
+          <td>Registration deadline</td>
+        </tr>
+        <tr>
+          <td>June 22, 2024</td>
+          <td>Testing server online</td>
+        </tr>
+        <tr>
+          <td>July 11, 2024</td>
+          <td>Test result submission deadline</td>
+        </tr>
+        <tr>
+          <td>July 11, 2024</td>
+          <td>Fact sheet / code / model submission
+            deadline</td>
+        </tr>
+        <tr>
+          <td>July 21, 2024</td>
+          <td>Competition Report submission deadline</td>
+        </tr>
+        <tr>
+          <td>August 1, 2024</td>
+          <td>Test preliminary score release to the participants</td>
+        </tr>
+        <tr>
+          <td>August 23, 2024</td>
+          <td>Challenge paper submission</td>
+        </tr>
+        <tr>
+          <td>September 2, 2024</td>
+          <td>Camera-ready papers due</td>
+        </tr>
+        <tr>
+          <td>December 1, 2024</td>
+          <td>Workshop day</td>
+        </tr>
+      </table>
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="anchor" id="Award"></a>
+          <h2><b>Track 1 Result:</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row">
+          <div class="col-xs-12 "  style="text-indent: 2em;">
+            <div class="divcss5">
+              <img src="img/ResultTrack1.png" style="width: 100%;"/>
+            </div>
+          </div>
+        </div>
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="anchor" id="Award"></a>
+          <h2><b>Track 2 Result:</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row">
+          <div class="col-xs-12 "  style="text-indent: 2em;">
+            <div class="divcss5">
+              <img src="img/ResultTrack2.png" style="width: 100%;"/>
+            </div>
+          </div>
+        </div>
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Introduction</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" > 
+              In recent years, with the development of deep learning technology, infrared small target detection has made rapid progress in various military and civilian fields, such as marine resource utilization, high-precision navigation, autonomous driving, and ecological environment monitoring. However, with the increasing demands for edge-side applications such as micro-satellites, micro-UAVs, autonomous vehicles and ships, existing infrared small target detection networks struggle to achieve efficient response in edge-side scenarios with limited annotated samples and computational resources. These limitations hinder their practical value in commercial and engineering applications.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" > 
+              To address the aforementioned problems, we decide to organize a resource-limited infrared small target detection challenge. We aim to collaborate with peer institutions to further promote infrared small target detection in edge-side scenarios.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Description of ICPR 2024 LimitIRSTD	</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" > 
+              <b>ICPR 2024 Resource-Limited Infrared Small Target Detection Challenge</b> (LimitIRSTD) aims to facilitate the development of infrared small object detection algorithms under limited resources (e.g., less annotation, and low computational cost). This challenge is expected to include the following two competition tracks.
+            </div>
+          </div>
+          <b>Track 1: Weakly Supervised Infrared Small Target Detection Under Single Point Supervision.</b> 
+          <div class="row">
+            <div class="col-xs-12" > 
+              The goal of this task is to achieve weakly supervised infrared small target detection under single coarse point supervision (i.e., GT point is located around the centroid of the GT mask under Gaussian distribution). We will provide the training set with 6000 images and corresponding single point annotations. Test set with 500 frames is unavailable to the participants, and the participants will submit the models for performance evaluation.
+            </div>
+            <div class="col-xs-12" >
+              <a href="https://bohrium.dp.tech/competitions/8821868197">Registration and submission in here.</a>
+               </div>
+          </div>
+          <b>Track 2: Lightweight Infrared Small Target Detection Under Pixel-level Supervision.</b>
+          <div class="row">
+            <div class="col-xs-12" > 
+              The goal of this task is to achieve lightweight and efficient infrared small target detection under pixel level supervision (i.e., the model achieves better detection performance with fewer parameters, less computation and less memory usage). We will provide the training set with 9000 images and corresponding ground truth mask annotations. Test set with 2000 images is unavailable to the participants, and the participants will submit the models for performance evaluation. 
+            </div>
+            <div class="col-xs-12" >
+            <a href="https://bohrium.dp.tech/competitions/9012970343">Registration and submission in here.</a>
+             </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Award for Each Track </b></h2>
+        </div>
+      </div>
+      <table class="table table-important" align="center">
+        <tr>
+          <th style="text-align:center">Awards</th>
+          <th style="text-align:center">Numbers</th>
+          <th style="text-align:center">Award Content</th>
+        </tr>
+        <tr>
+          <td style="text-align:center">First Prize</td>
+          <td style="text-align:center">1 Team </td>
+          <td style="text-align:center">6000 RMB, Certificate </td>
+        </tr>
+        <tr>
+          <td style="text-align:center">Second Prize </td>
+          <td style="text-align:center">2 Teams  </td>
+          <td style="text-align:center">3000 RMB, Certificate  </td>
+        </tr>
+        <tr>
+          <td style="text-align:center">Third Prize </td>
+          <td style="text-align:center">3 Teams  </td>
+          <td style="text-align:center">1000 RMB </td>
+        </tr>
+      </table>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" > 
+              The organization committee of the ICPR2024 Conference will issue award certificates to 1st to 3rd prizes of each track. Teams that win the prize will be invited to submit their co-written papers to the ICPR2024 Challenge for peer review. If the paper is to be accepted and published, the participating team must specify the solution and ensure the repeatability of the competition results. Co-written paper is optional and does not affect the competitor's participation in the challenge or award.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Co-organizer</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" > 
+          <div class="divcss5">
+            <img src="img/BSIG_logo.png" style="width:35%"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" > 
+          <div class="divcss5">
+            <img src="img/SITONHOLY_logo.png" style="width:35%"/>
+          </div>
+        </div>
+      </div>
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><b>Contact</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12" > 
+              <b>Emails:</b> LimitIRSTD@outlook.com
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" > 
+              <b>Toolbox:</b> <a href="https://github.com/XinyiYing/BasicIRSTD">https://github.com/XinyiYing/BasicIRSTD</a> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" > 
+              <b>Wechat:</b>
+              <div class="divcss5">
+                <img src="img/ICPR_2DCode_0626.jpg" style="width:30%"/>
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </div>
+</body>
+
+</html>
